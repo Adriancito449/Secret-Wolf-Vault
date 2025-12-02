@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GhostVault | Verificar Contraseña</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+        <link rel="stylesheet" href="/css/verify.css">
+
+    <script src="/js/verfy.js" type="module"></script>
+</head>
+<body>
+    <h1>🔒 Secreto Protegido</h1>
+    <p>Introduce la contraseña para revelar y destruir el secreto.</p>
+
+    <form id="verifyForm">
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Revelar Secreto</button>
+    </form>
+    <div id="result-message"></div>
+    <div id="decrypted-secret" style="display:none;"></div>
+
+</body>
+</html>

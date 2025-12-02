@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GhostVault | Revelar Secreto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <link rel="stylesheet" href="/css/read.css">
+    <script src="/js/read.js" type="module"></script>
+</head>
+<body>
+    <h1>🔥 Revelando Secreto...</h1>
+    
+    <div id="secret-container" style="display:none;">
+        <p><strong>Mensaje Secreto:</strong></p>
+        <textarea id="revealed-message" rows="10" cols="60" readonly></textarea>
+        
+        <div id="file-container"></div> 
+
+        <p class="warning">⚠️ Este secreto ha sido **eliminado** permanentemente de la base de datos.</p>
+    </div>
+    
+    <div id="error-message"></div>
+
+</body>
+</html>

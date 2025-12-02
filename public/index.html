@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostVault | Crear Secreto</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+    <script src="/js/index.js" type="module"></script>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <h1>🔒 Crear un Secreto </h1>
+    <form id="secretForm" enctype="multipart/form-data">
+        <label for="message">Mensaje Secreto / Contraseña a Compartir:</label>
+        <textarea id="message" required rows="6"></textarea>
+
+        <label for="password">Proteger con Contraseña (Opcional):</label>
+        <input type="password" id="password" placeholder="Deja vacío si no quieres protegerlo">
+
+        <label for="attachment">Adjuntar Archivo (Máx. 5MB):</label>
+        <input type="file" id="attachment" name="attachment" accept="image/*, application/pdf, text/plain">
+
+        <button type="submit">Generar Enlace Secreto</button>
+    </form>
+
+    <div id="result-link">
+        <p class="success">✅ ¡Enlace generado con éxito! Compártelo:</p>
+        <a id="secretLink" href="#" target="_blank"></a>
+        <p>⚠️ Este enlace solo se podrá ver una vez.</p>
+    </div>
+
+
+</body>
+
+</html>
