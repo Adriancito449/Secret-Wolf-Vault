@@ -1,6 +1,6 @@
 
 
-# 👻 GhostVault: Destructible Zero-Knowledge Secret Sharing
+#  Wolf Vault: Destructible Zero-Knowledge Secret Sharing
 
 GhostVault is a secure web application for sharing secrets (messages or files) that are **destroyed after the first read** or upon **time expiration**. It is built on a **Zero-Knowledge** architecture, ensuring the server never knows the content of the secret or the decryption key. 
 
