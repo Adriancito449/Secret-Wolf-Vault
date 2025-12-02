@@ -1,45 +1,49 @@
-# 👻 GhostVault: Secreto Destructible Zero-Knowledge
-
-GhostVault es una aplicación web segura para compartir secretos (mensajes o archivos) que se **destruyen después de la primera lectura** o al **expirar el tiempo**. Está construido bajo una arquitectura **Zero-Knowledge**, asegurando que el servidor nunca conozca el contenido del secreto ni la clave de descifrado.
-
-# 🛠️ Estructura del Proyecto
-
-server.js: Punto de entrada del servidor Express y configuración de la base de datos.
-
-routes/secretRoutes.js: Contiene todas las rutas API (/api/create, /api/verify, /api/read-and-burn).
-
-public/: Contiene todos los archivos estáticos (HTML, JS, CSS) accesibles al cliente.
 
 
-Una vez que subas este archivo a GitHub, tendrás la documentación completa para tu proyecto.
+# 👻 GhostVault: Destructible Zero-Knowledge Secret Sharing
+
+GhostVault is a secure web application for sharing secrets (messages or files) that are **destroyed after the first read** or upon **time expiration**. It is built on a **Zero-Knowledge** architecture, ensuring the server never knows the content of the secret or the decryption key. 
+
+
+
 
 ---
 
-# ⚖️ Licencia
+## 🛠️ Project Structure
 
-Este proyecto está bajo la [**Licencia MIT**](LICENSE). ¡Siéntete libre de usar y contribuir!
+* **`server.js`**: The entry point for the Express server and database configuration.
+* **`routes/secretRoutes.js`**: Contains all API routes (`/api/create`, `/api/verify`, `/api/read-and-burn`).
+* **`public/`**: Contains all static files (HTML, JS, CSS) accessible to the client.
+
+Once you upload this file to GitHub, you will have complete documentation for your project.
 
 ---
 
-# 🚀 Cómo Ejecutar el Proyecto Localmente
+## ⚖️ License
 
-Para iniciar GhostVault en tu máquina, sigue estos sencillos pasos:
+This project is released under the [**MIT License**](LICENSE). Feel free to use and contribute!
 
-## 1. Requisitos Previos
+---
 
-Asegúrate de tener instalado:
+## 🚀 How to Run the Project Locally
 
-* **Node.js** (versión 16 o superior)
-* **MySQL** (o MariaDB)
+To start GhostVault on your machine, follow these simple steps:
 
-## 2. Configuración de la Base de Datos
+### 1. Prerequisites
 
-Necesitas crear una base de datos y una tabla para almacenar los secretos cifrados:
+Make sure you have the following installed:
 
-1.  Crea una base de datos en MySQL (ej. `ghost_vault_db`).
-2.  Ejecuta el siguiente código SQL para crear la tabla `secrets`:
+* **Node.js** (version 16 or higher)
+* **MySQL** (or MariaDB)
 
+### 2. Database Configuration
 
+You need to create a database and a table to store the encrypted secrets:
+
+1.  Create a database in MySQL (e.g., `ghost_vault_db`).
+2.  Execute the following SQL code to create the `secrets` table:
+
+```sql
 CREATE TABLE secrets (
     id INT AUTO_INCREMENT PRIMARY KEY,
     uuid VARCHAR(36) NOT NULL UNIQUE,
@@ -50,52 +54,76 @@ CREATE TABLE secrets (
     is_read BOOLEAN DEFAULT FALSE,
     expires_at DATETIME NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
+);
+````
 
+### 3\. Environment Variables
 
-## 3. Variables de Entorno
-Crea un archivo llamado .env en la raíz del proyecto (la misma carpeta que server.js) y añade tus credenciales de MySQL:
+Create a file named **`.env`** in the root of the project (the same folder as `server.js`) and add your MySQL credentials:
 
-#### Configuración de la Base de Datos MySQL
+```
+# MySQL Database Configuration
 DB_HOST=localhost
 DB_USER=root
-DB_PASSWORD=tu_contraseña_mysql
+DB_PASSWORD=your_mysql_password
 DB_DATABASE=ghost_vault_db
 DB_PORT=3306
+```
 
-## 4. Instalación y Ejecución
+### 4\. Installation and Execution
 
-Ejecuta estos comandos en tu terminal para instalar las dependencias e iniciar el servidor:
-### Instalar dependencias (express, mysql2, dotenv, uuid, bcrypt, multer)
+Run these commands in your terminal to install dependencies and start the server:
+
+```bash
+# Install dependencies (express, mysql2, dotenv, uuid, bcrypt, multer)
 npm install
-### Iniciar el servidor
+
+# Start the server
 node server.js
+```
 
-# 🤝 Flujo de Contribución (Requiere Aprobación)
-Agradecemos cualquier contribución. Para mantener la calidad y seguridad del código, todos los cambios deben ser revisados y aprobados por un mantenedor a través de un Pull Request (PR).
+The server will start at `http://localhost:3000`.
 
-## 1. Clonar y Ramificar
-Clona el proyecto y crea una rama específica para tu tarea:
+-----
 
-Bash
+## 🤝 Contribution Flow (Approval Required)
 
+We welcome all contributions. To maintain code quality and security, **all changes must be reviewed and formally approved** by a maintainer via a **Pull Request (PR)**.
+
+### 1\. Clone and Branch
+
+Clone the project and create a specific branch for your task:
+
+```bash
 git clone [https://github.com/Adriancito449/Secret-Wolf-Vault.git](https://github.com/Adriancito449/Secret-Wolf-Vault.git)
 cd Secret-Wolf-Vault
-### Crea una nueva rama para tu feature
-git checkout -b feature/nombre-de-tu-cambio
-## 2. Escribir Código y Confirmar Cambios
-Realiza tus cambios y haz commits descriptivos:
+# Create a new branch for your feature
+git checkout -b feature/your-change-name
+```
 
-Bash
+### 2\. Write Code and Commit Changes
 
+Make your changes and create descriptive commits:
+
+```bash
 git add .
-git commit -m "feat: Describe tu nueva funcionalidad aquí"
-## 3. Proponer el Cambio (Pull Request)
-Sube tu rama a tu repositorio remoto:
+git commit -m "feat: Describe your new functionality here"
+```
 
-Bash
+### 3\. Propose the Change (Pull Request)
 
-git push origin feature/nombre-de-tu-cambio
-Ve a GitHub y crea un Pull Request (PR) proponiendo fusionar tu rama con la rama main.
+1.  Push your branch to your remote repository:
+    ```bash
+    git push origin feature/your-change-name
+    ```
+2.  Go to GitHub and create a **Pull Request (PR)** proposing to merge your branch into the `main` branch.
+3.  **The change will be reviewed by a maintainer (Adriancito449).** Only after formal approval will the code be merged into the main project.
 
-El cambio será revisado por un mantenedor (Adriancito449). Solo después de la aprobación formal, el código será fusionado con el proyecto principal.
+<!-- end list -->
+
+```
+
+---
+
+¿Te gustaría que volvamos al código para implementar la **barra de progreso visual** o alguna otra mejora de usabilidad?
+```
