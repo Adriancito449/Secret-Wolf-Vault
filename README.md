@@ -121,9 +121,3 @@ git commit -m "feat: Describe your new functionality here"
 
 <!-- end list -->
 
-```
-
----
-
-¿Te gustaría que volvamos al código para implementar la **barra de progreso visual** o alguna otra mejora de usabilidad?
-```
